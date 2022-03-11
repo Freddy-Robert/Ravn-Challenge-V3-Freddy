@@ -1,0 +1,34 @@
+<?xml version="1.0" encoding="utf-8"?>
+<navigation xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    app:startDestination="@id/listPeopleFragment">
+
+    <fragment
+        android:id="@+id/listPeopleFragment"
+        android:name="com.app.ravn_challenge.view.ui.PeopleListFragment"
+        android:label="fragment_list_people"
+        tools:layout="@layout/fragment_people_list" >
+        <action
+            android:id="@+id/action_listPeopleFragment_to_detailPersonFragment"
+            app:destination="@id/detailPersonFragment">
+            <argument
+                android:name="personId"
+                app:argType="string"
+                android:defaultValue=""/>
+        </action>
+
+    </fragment>
+
+    <fragment
+        android:id="@+id/detailPersonFragment"
+        android:name="com.app.ravn_challenge.view.ui.DetailPersonFragment"
+        android:label="fragment_detail_person"
+        tools:layout="@layout/fragment_person_detail">
+
+        <argument
+            android:name="personId"
+            app:argType="string" />
+    </fragment>
+
+</navigation>

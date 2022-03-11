@@ -1,0 +1,124 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools">
+
+    <data>
+        <variable
+            name="personData"
+            type="com.app.ravn_challenge.PeopleQuery.Data" />
+    </data>
+
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent">
+
+        <TextView
+            android:id="@+id/tv_general_information"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="@string/title_general_information"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent" />
+
+        <TextView
+            android:id="@+id/tv_eye_color_label"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="@string/label_eye_color"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@id/tv_general_information" />
+
+        <TextView
+            android:id="@+id/tv_hair_color_label"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="@string/label_hair_color"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@id/tv_eye_color_label" />
+
+        <TextView
+            android:id="@+id/tv_skin_color_label"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="@string/label_skin_color"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@id/tv_hair_color_label" />
+
+        <TextView
+            android:id="@+id/tv_birth_year_label"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="@string/label_birth_year"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@id/tv_skin_color_label" />
+
+
+        <TextView
+            android:id="@+id/tv_eye_color_value"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="@{personData.person.eyeColor}"
+            app:layout_constraintBottom_toBottomOf="@+id/tv_eye_color_label"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintTop_toTopOf="@+id/tv_eye_color_label" />
+
+        <TextView
+            android:id="@+id/tv_hair_color_value"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="@{personData.person.hairColor}"
+            app:layout_constraintBottom_toBottomOf="@+id/tv_hair_color_label"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintTop_toTopOf="@+id/tv_hair_color_label" />
+
+        <TextView
+            android:id="@+id/tv_skin_color_value"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="@{personData.person.skinColor}"
+            app:layout_constraintBottom_toBottomOf="@+id/tv_skin_color_label"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintTop_toTopOf="@+id/tv_skin_color_label" />
+
+        <TextView
+            android:id="@+id/tv_birth_year_value"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="@{personData.person.birthYear}"
+            app:layout_constraintBottom_toBottomOf="@+id/tv_birth_year_label"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintTop_toTopOf="@+id/tv_birth_year_label" />
+
+        <TextView
+            android:id="@+id/tv_vehicles"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="@string/title_vehicles"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@id/tv_birth_year_label" />
+
+        <ProgressBar
+            android:id="@+id/progress_bar"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent" />
+
+        <TextView
+            android:id="@+id/error_text"
+            style="@style/Base.TextAppearance.AppCompat.Title"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Zero characters found"
+            android:visibility="gone"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@id/progress_bar"
+            tools:visibility="visible" />
+
+    </androidx.constraintlayout.widget.ConstraintLayout>
+
+</layout>
