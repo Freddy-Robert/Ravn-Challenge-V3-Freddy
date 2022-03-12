@@ -2,10 +2,14 @@ package com.app.ravn_challenge.network
 
 import com.apollographql.apollo3.ApolloClient
 import com.apollographql.apollo3.network.okHttpClient
+import com.app.ravn_challenge.utilities.SERVER_URL
 import okhttp3.OkHttpClient
 
 private var instance: ApolloClient? = null
-private const val SERVER_URL = "https://swapi-graphql.netlify.app/.netlify/functions/index"
+
+/**
+ * Class used to connect Apollo to fetch People of the repository
+ */
 
 class Apollo{
 

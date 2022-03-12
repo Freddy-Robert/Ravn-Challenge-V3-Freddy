@@ -9,6 +9,10 @@ import androidx.navigation.ui.setupActionBarWithNavController
 import com.app.ravn_challenge.databinding.ActivityMainBinding
 import dagger.hilt.android.AndroidEntryPoint
 
+/**
+ * Parent activity and container of the fragments
+ */
+
 @AndroidEntryPoint
 class MainActivity : AppCompatActivity() {
 

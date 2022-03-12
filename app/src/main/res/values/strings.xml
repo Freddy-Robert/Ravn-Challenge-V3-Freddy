@@ -1,9 +1,6 @@
 <resources>
     <string name="app_name">Ravn-Challenge</string>
 
-    <!-- TODO: Remove or change this placeholder text -->
-    <string name="hello_blank_fragment">Hello blank fragment</string>
-
     <!-- Translatable resources -->
     <string name="title_general_information">General Information</string>
     <string name="label_eye_color">Eye Color</string>
@@ -21,4 +18,5 @@
     <string name="text_person_description">%1$s from %2$s</string>
     <string name="placeholder_unknown_specie_name">Human</string>
     <string name="placeholder_unknown_world">Unknown World</string>
+    <string name="text_search_menu">Search</string>
 </resources>

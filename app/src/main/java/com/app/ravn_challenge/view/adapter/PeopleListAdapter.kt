@@ -1,6 +1,5 @@
 package com.app.ravn_challenge.view.adapter
 
-import android.content.Context
 import android.view.LayoutInflater
 import android.view.ViewGroup
 import androidx.recyclerview.widget.DiffUtil
@@ -9,8 +8,10 @@ import androidx.recyclerview.widget.RecyclerView
 import com.app.ravn_challenge.AllPeopleQuery
 import com.app.ravn_challenge.R
 import com.app.ravn_challenge.databinding.PersonItemBinding
-import dagger.hilt.android.qualifiers.ApplicationContext
-import javax.inject.Inject
+
+/**
+ * Adapter for the [RecyclerView] in [PeopleListFragment]
+ */
 
 class PeopleListAdapter() : ListAdapter<AllPeopleQuery.Person, PeopleListAdapter.ViewHolder>(PeopleDiffUtil()) {
 
@@ -40,6 +41,10 @@ class PeopleListAdapter() : ListAdapter<AllPeopleQuery.Person, PeopleListAdapter
     }
 
 }
+
+/**
+ * Helper class for enhance performance of the recycler view
+ */
 
 class PeopleDiffUtil : DiffUtil.ItemCallback<AllPeopleQuery.Person>() {
 

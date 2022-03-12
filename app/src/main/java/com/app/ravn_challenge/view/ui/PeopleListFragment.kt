@@ -1,10 +1,10 @@
 package com.app.ravn_challenge.view.ui
 
 import android.os.Bundle
+import android.view.*
+import android.widget.Toast
+import androidx.appcompat.widget.SearchView
 import androidx.fragment.app.Fragment
-import android.view.LayoutInflater
-import android.view.View
-import android.view.ViewGroup
 import androidx.fragment.app.viewModels
 import androidx.navigation.fragment.findNavController
 import com.app.ravn_challenge.R
@@ -13,7 +13,10 @@ import com.app.ravn_challenge.databinding.FragmentPeopleListBinding
 import com.app.ravn_challenge.view.state.ViewState
 import com.app.ravn_challenge.viewmodel.PeopleViewModel
 import dagger.hilt.android.AndroidEntryPoint
-import javax.inject.Inject
+
+/**
+ * A fragment representing the list of people in the screen
+ */
 
 @AndroidEntryPoint
 class PeopleListFragment : Fragment() {
@@ -104,5 +107,28 @@ class PeopleListFragment : Fragment() {
         binding.informationText.visibility = View.VISIBLE
         binding.informationText.text = getString(R.string.failed_data_text)
         binding.informationText.setTextColor(resources.getColor(R.color.text_emphasis))
+    }
+
+    override fun onCreate(savedInstanceState: Bundle?) {
+        super.onCreate(savedInstanceState)
+        setHasOptionsMenu(true)
+    }
+
+    override fun onCreateOptionsMenu(menu: Menu, inflater: MenuInflater) {
+        inflater.inflate(R.menu.search_fragment_list_menu, menu)
+        val search = menu.findItem(R.id.search_option)
+        val searchView = search.actionView as SearchView
+        searchView.queryHint = "Search"
+        searchView.setOnQueryTextListener(object : SearchView.OnQueryTextListener {
+            override fun onQueryTextSubmit(query: String?): Boolean {
+                Toast.makeText(activity, "Test", Toast.LENGTH_LONG).show()
+                val returnedList = viewModel.searchByName(query)
+                return true
+            }
+            override fun onQueryTextChange(newText: String?): Boolean {
+                return false
+            }
+        })
+        return super.onCreateOptionsMenu(menu, inflater)
     }
 }

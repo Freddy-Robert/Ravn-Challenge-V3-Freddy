@@ -11,12 +11,17 @@ import com.app.ravn_challenge.view.state.ViewState
 import dagger.hilt.android.lifecycle.HiltViewModel
 import kotlinx.coroutines.delay
 import kotlinx.coroutines.launch
+import java.nio.file.Files.find
 import javax.inject.Inject
+
+/**
+ * The ViewModel for [PeopleListFragment] and [PersonDetailFragment]
+ */
 
 @HiltViewModel
 class PeopleViewModel @Inject constructor(private val repository: PeopleRepository): ViewModel() {
 
-    private val _peopleList by lazy{ MutableLiveData<ViewState<ApolloResponse<AllPeopleQuery.Data>>>() }
+    private val _peopleList by lazy { MutableLiveData<ViewState<ApolloResponse<AllPeopleQuery.Data>>>() }
 
     val peopleList: LiveData<ViewState<ApolloResponse<AllPeopleQuery.Data>>>
         get() = _peopleList
@@ -30,7 +35,7 @@ class PeopleViewModel @Inject constructor(private val repository: PeopleReposito
         _peopleList.postValue(ViewState.Loading())
         try {
             val response = repository.getAllPeople()
-            delay(5000)
+            delay(3000)
             _peopleList.postValue(ViewState.Success(response))
         } catch (e: ApolloException) {
             Log.d("ApolloException", "Failure", e)
@@ -49,5 +54,8 @@ class PeopleViewModel @Inject constructor(private val repository: PeopleReposito
         }
     }
 
+    fun searchByName(name: String?) {
+
+    }
 
 }

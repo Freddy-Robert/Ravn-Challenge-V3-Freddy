@@ -1,5 +1,9 @@
 package com.app.ravn_challenge.view.state
 
+/**
+ * Helper class for handle the state of repository's response
+ */
+
 sealed class ViewState<T>(
     val value: T? = null,
     val message: String? = null

@@ -1,17 +1,18 @@
 package com.app.ravn_challenge.view.ui
 
 import android.os.Bundle
+import android.view.*
 import androidx.fragment.app.Fragment
-import android.view.LayoutInflater
-import android.view.View
-import android.view.ViewGroup
 import androidx.fragment.app.viewModels
-import androidx.navigation.Navigation
 import androidx.navigation.fragment.navArgs
 import com.app.ravn_challenge.databinding.FragmentPersonDetailBinding
 import com.app.ravn_challenge.view.state.ViewState
 import com.app.ravn_challenge.viewmodel.PeopleViewModel
 import dagger.hilt.android.AndroidEntryPoint
+
+/**
+ * A fragment representing a single Person detail screen.
+ */
 
 @AndroidEntryPoint
 class DetailPersonFragment : Fragment() {

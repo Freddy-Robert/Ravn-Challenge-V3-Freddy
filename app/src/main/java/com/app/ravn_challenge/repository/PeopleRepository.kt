@@ -4,6 +4,10 @@ import com.apollographql.apollo3.api.ApolloResponse
 import com.app.ravn_challenge.AllPeopleQuery
 import com.app.ravn_challenge.PeopleQuery
 
+/**
+ * Interface implemented in [PeopleRepositoryImpl]
+ */
+
 interface PeopleRepository {
 
     suspend fun getAllPeople(): ApolloResponse<AllPeopleQuery.Data>

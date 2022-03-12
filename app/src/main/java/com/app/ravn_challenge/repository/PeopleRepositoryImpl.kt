@@ -7,6 +7,10 @@ import com.app.ravn_challenge.PeopleQuery
 import com.app.ravn_challenge.network.Apollo
 import javax.inject.Inject
 
+/**
+ * Repository to fetch data from the webService
+ */
+
 class PeopleRepositoryImpl @Inject constructor(private val apolloService: Apollo): PeopleRepository {
 
     override suspend fun getAllPeople(): ApolloResponse<AllPeopleQuery.Data> {
