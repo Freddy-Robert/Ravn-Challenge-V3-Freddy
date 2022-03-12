@@ -1,12 +1,16 @@
 package com.app.ravn_challenge.view.adapter
 
+import android.content.Context
 import android.view.LayoutInflater
 import android.view.ViewGroup
 import androidx.recyclerview.widget.DiffUtil
 import androidx.recyclerview.widget.ListAdapter
 import androidx.recyclerview.widget.RecyclerView
 import com.app.ravn_challenge.AllPeopleQuery
+import com.app.ravn_challenge.R
 import com.app.ravn_challenge.databinding.PersonItemBinding
+import dagger.hilt.android.qualifiers.ApplicationContext
+import javax.inject.Inject
 
 class PeopleListAdapter() : ListAdapter<AllPeopleQuery.Person, PeopleListAdapter.ViewHolder>(PeopleDiffUtil()) {
 
@@ -21,7 +25,14 @@ class PeopleListAdapter() : ListAdapter<AllPeopleQuery.Person, PeopleListAdapter
 
     override fun onBindViewHolder(holder: ViewHolder, position: Int) {
         val person =  getItem(position)
-        holder.binding.tvPersonName.text = person.name ?: "naida"
+
+        val resources = holder.itemView.context.resources
+        val specieName = person.species?.name ?: resources.getString(R.string.placeholder_unknown_specie_name)
+        val homeWorld = person.homeworld?.name ?: resources.getString(R.string.placeholder_unknown_world)
+        val personDescription = resources.getString(R.string.text_person_description, specieName, homeWorld)
+
+        holder.binding.tvPersonName.text = person.name
+        holder.binding.tvPersonDescription.text = personDescription
 
         holder.binding.root.setOnClickListener {
             onItemClicked?.invoke(person)

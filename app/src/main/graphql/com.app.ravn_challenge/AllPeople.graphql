@@ -3,6 +3,12 @@ query AllPeople {
         people {
             name
             id
+            species {
+                name
+            }
+            homeworld {
+                name
+            }
         }
     }
 }

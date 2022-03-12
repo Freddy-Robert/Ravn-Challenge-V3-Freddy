@@ -19,4 +19,6 @@
     <string name="content_description_arrow">This arrow takes you to the detail person section</string>
 
     <string name="text_person_description">%1$s from %2$s</string>
+    <string name="placeholder_unknown_specie_name">Human</string>
+    <string name="placeholder_unknown_world">Unknown World</string>
 </resources>

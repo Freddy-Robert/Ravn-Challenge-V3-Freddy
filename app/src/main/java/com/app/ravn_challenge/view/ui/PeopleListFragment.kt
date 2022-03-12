@@ -13,6 +13,7 @@ import com.app.ravn_challenge.databinding.FragmentPeopleListBinding
 import com.app.ravn_challenge.view.state.ViewState
 import com.app.ravn_challenge.viewmodel.PeopleViewModel
 import dagger.hilt.android.AndroidEntryPoint
+import javax.inject.Inject
 
 @AndroidEntryPoint
 class PeopleListFragment : Fragment() {
