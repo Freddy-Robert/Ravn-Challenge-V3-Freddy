@@ -42,7 +42,8 @@ class PeopleListFragment : Fragment() {
             person.let {
                 if(!person.id.isNullOrBlank()){
                     findNavController().navigate(
-                        PeopleListFragmentDirections.actionListPeopleFragmentToDetailPersonFragment(personId = person.id)
+                        PeopleListFragmentDirections.actionListPeopleFragmentToDetailPersonFragment(
+                            personId = person.id, detailTitleFragment = person.name.toString())
                     )
                 }
             }

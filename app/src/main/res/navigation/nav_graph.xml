@@ -13,9 +13,12 @@
             android:id="@+id/action_listPeopleFragment_to_detailPersonFragment"
             app:destination="@id/detailPersonFragment">
             <argument
-                android:name="personId"
-                app:argType="string"
-                android:defaultValue=""/>
+            android:name="personId"
+            app:argType="string"
+            android:defaultValue=""/>
+            <argument
+                android:name="detailTitleFragment"
+                app:argType="string"/>
         </action>
 
     </fragment>
@@ -23,11 +26,16 @@
     <fragment
         android:id="@+id/detailPersonFragment"
         android:name="com.app.ravn_challenge.view.ui.DetailPersonFragment"
+        android:label="{detailTitleFragment}"
         tools:layout="@layout/fragment_person_detail">
 
         <argument
             android:name="personId"
             app:argType="string" />
+        <argument
+            android:name="detailTitleFragment"
+            app:argType="string"
+            android:defaultValue="Person Detail"/>
     </fragment>
 
 </navigation>

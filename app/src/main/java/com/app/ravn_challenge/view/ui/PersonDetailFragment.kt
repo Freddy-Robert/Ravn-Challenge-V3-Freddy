@@ -31,8 +31,6 @@ class DetailPersonFragment : Fragment() {
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
         super.onViewCreated(view, savedInstanceState)
 
-        Navigation.findNavController(view).currentDestination?.label
-
         viewModel.getPersonById(args.personId)
         observeLiveData()
 
