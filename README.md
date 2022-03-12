@@ -1,6 +1,6 @@
 # Ravn Challenge
 
-An interesting and informative app that show a list of characters of Star Wars movie with some aditional information implementing MVVM arquitecture.
+An interesting and informative app that show a list of characters of Star Wars movie with more information in other section. The project has been implemented following the best practices in android development and architecture such as the MVVM model, dependency injection and using Apollo Graphql that allow transfer data between the server to the UI of the app.
 <br/>
 <br/>
 ### Pre-Requisites
