@@ -21,7 +21,7 @@ class PeopleListAdapter() : ListAdapter<AllPeopleQuery.Person, PeopleListAdapter
 
     override fun onBindViewHolder(holder: ViewHolder, position: Int) {
         val person =  getItem(position)
-        holder.binding.personName.text = person.name ?: "naida"
+        holder.binding.tvPersonName.text = person.name ?: "naida"
 
         holder.binding.root.setOnClickListener {
             onItemClicked?.invoke(person)

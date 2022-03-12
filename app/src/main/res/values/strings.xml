@@ -8,13 +8,15 @@
     <string name="title_general_information">General Information</string>
     <string name="label_eye_color">Eye Color</string>
     <string name="label_hair_color">Hair Color</string>
-    <string name="label_skin_color">Skin color</string>
-    <string name="label_birth_year">Birth year</string>
+    <string name="label_skin_color">Skin Color</string>
+    <string name="label_birth_year">Birth Year</string>
     <string name="title_vehicles">Vehicles</string>
 
     <string name="title_fragment_list_people">People of Star Wars</string>
     <string name="failed_data_text">Failed to Load Data</string>
     <string name="text_loading_data">Loading data</string>
     <string name="text_not_found_data">No data found</string>
+    <string name="content_description_arrow">This arrow takes you to the detail person section</string>
 
+    <string name="text_person_description">%1$s from %2$s</string>
 </resources>
