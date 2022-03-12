@@ -6,6 +6,7 @@ import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
 import androidx.fragment.app.viewModels
+import androidx.navigation.Navigation
 import androidx.navigation.fragment.navArgs
 import com.app.ravn_challenge.databinding.FragmentPersonDetailBinding
 import com.app.ravn_challenge.view.state.ViewState
@@ -30,8 +31,11 @@ class DetailPersonFragment : Fragment() {
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
         super.onViewCreated(view, savedInstanceState)
 
+        Navigation.findNavController(view).currentDestination?.label
+
         viewModel.getPersonById(args.personId)
         observeLiveData()
+
     }
 
     private fun observeLiveData() {

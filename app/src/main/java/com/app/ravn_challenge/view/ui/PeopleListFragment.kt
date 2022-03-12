@@ -7,6 +7,7 @@ import android.view.View
 import android.view.ViewGroup
 import androidx.fragment.app.viewModels
 import androidx.navigation.fragment.findNavController
+import com.app.ravn_challenge.R
 import com.app.ravn_challenge.view.adapter.PeopleListAdapter
 import com.app.ravn_challenge.databinding.FragmentPeopleListBinding
 import com.app.ravn_challenge.view.state.ViewState
@@ -45,37 +46,61 @@ class PeopleListFragment : Fragment() {
                 }
             }
         }
+
+        binding.swipeRefreshLayout.setOnRefreshListener {
+            viewModel.getPeopleList()
+        }
     }
 
     private fun observeLiveData() {
         viewModel.peopleList.observe(viewLifecycleOwner) { response ->
             when (response){
                 is ViewState.Loading -> {
-                    binding.peopleListRecycler.visibility = View.GONE
+                    showDataWhenLoading()
                 }
                 is ViewState.Success -> {
                     if (response.value?.data?.allPeople?.people?.size == 0) {
-                        peopleListAdapter.submitList(emptyList())
-                        binding.progressBar.visibility = View.GONE
-                        binding.peopleListRecycler.visibility = View.GONE
-                        binding.noInformationText.visibility = View.VISIBLE
+                        showDataWhenListIsEmpty()
                     } else {
                         binding.peopleListRecycler.visibility = View.VISIBLE
-                        binding.noInformationText.visibility = View.GONE
+                        binding.informationText.visibility = View.GONE
                     }
                     val results = response.value?.data?.allPeople?.people
 
                     peopleListAdapter.submitList(results)
-                    binding.progressBar.visibility = View.GONE
+                    binding.swipeRefreshLayout.isRefreshing = false
 
                 }
                 is ViewState.Error -> {
-                    peopleListAdapter.submitList(emptyList())
-                    binding.progressBar.visibility = View.GONE
-                    binding.peopleListRecycler.visibility = View.GONE
-                    binding.noInformationText.visibility = View.VISIBLE
+                    showDataWhenError()
                 }
             }
         }
+    }
+
+    private fun showDataWhenLoading() {
+        binding.peopleListRecycler.visibility = View.GONE
+        binding.swipeRefreshLayout.isRefreshing = true
+        binding.informationText.visibility = View.VISIBLE
+        binding.informationText.text = getString(R.string.text_loading_data)
+        binding.informationText.setTextColor(resources.getColor(R.color.text_light))
+    }
+
+    private fun showDataWhenListIsEmpty() {
+        peopleListAdapter.submitList(emptyList())
+        binding.swipeRefreshLayout.isRefreshing = false
+        binding.peopleListRecycler.visibility = View.GONE
+        binding.informationText.visibility = View.VISIBLE
+        binding.informationText.text = getString(R.string.text_not_found_data)
+        binding.informationText.setTextColor(resources.getColor(R.color.text_emphasis))
+    }
+
+    private fun showDataWhenError() {
+        peopleListAdapter.submitList(emptyList())
+        binding.swipeRefreshLayout.isRefreshing = false
+        binding.peopleListRecycler.visibility = View.GONE
+        binding.informationText.visibility = View.VISIBLE
+        binding.informationText.text = getString(R.string.failed_data_text)
+        binding.informationText.setTextColor(resources.getColor(R.color.text_emphasis))
     }
 }

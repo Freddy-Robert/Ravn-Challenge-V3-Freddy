@@ -9,6 +9,7 @@
     <color name="white">#FFFFFFFF</color>
 
     <color name="ravn_black">#121212</color>
+    <color name="base_purple">#000000</color>
     <color name="text_dark">#333333</color>
     <color name="text_light">#828282</color>
     <color name="text_emphasis">#EC5757</color>

@@ -12,4 +12,9 @@
     <string name="label_birth_year">Birth year</string>
     <string name="title_vehicles">Vehicles</string>
 
+    <string name="title_fragment_list_people">People of Star Wars</string>
+    <string name="failed_data_text">Failed to Load Data</string>
+    <string name="text_loading_data">Loading data</string>
+    <string name="text_not_found_data">No data found</string>
+
 </resources>

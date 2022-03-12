@@ -9,6 +9,7 @@ import com.app.ravn_challenge.PeopleQuery
 import com.app.ravn_challenge.repository.PeopleRepository
 import com.app.ravn_challenge.view.state.ViewState
 import dagger.hilt.android.lifecycle.HiltViewModel
+import kotlinx.coroutines.delay
 import kotlinx.coroutines.launch
 import javax.inject.Inject
 
@@ -29,6 +30,7 @@ class PeopleViewModel @Inject constructor(private val repository: PeopleReposito
         _peopleList.postValue(ViewState.Loading())
         try {
             val response = repository.getAllPeople()
+            delay(5000)
             _peopleList.postValue(ViewState.Success(response))
         } catch (e: ApolloException) {
             Log.d("ApolloException", "Failure", e)
