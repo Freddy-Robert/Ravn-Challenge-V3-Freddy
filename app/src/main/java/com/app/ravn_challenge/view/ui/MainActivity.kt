@@ -26,12 +26,19 @@ class MainActivity : AppCompatActivity() {
         val view = binding.root
         setContentView(view)
 
+        // Retrieve NavController from the NavHostFragment
         val navHostFragment =
             supportFragmentManager.findFragmentById(binding.navHostFragment.id) as NavHostFragment
         navController = navHostFragment.findNavController()
+
+        // Set up the action bar for use with the NavController
         setupActionBarWithNavController(navController)
     }
 
+
+    /**
+     * Handle navigation when the user chooses Up from the action bar.
+     */
     override fun onSupportNavigateUp(): Boolean {
         navController.navigateUp()
         return super.onSupportNavigateUp()

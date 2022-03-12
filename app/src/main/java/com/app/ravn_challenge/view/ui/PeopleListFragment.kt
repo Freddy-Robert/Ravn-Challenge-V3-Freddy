@@ -118,11 +118,9 @@ class PeopleListFragment : Fragment() {
         inflater.inflate(R.menu.search_fragment_list_menu, menu)
         val search = menu.findItem(R.id.search_option)
         val searchView = search.actionView as SearchView
-        searchView.queryHint = "Search"
+        searchView.queryHint = getString(R.string.search_hint_text)
         searchView.setOnQueryTextListener(object : SearchView.OnQueryTextListener {
             override fun onQueryTextSubmit(query: String?): Boolean {
-                Toast.makeText(activity, "Test", Toast.LENGTH_LONG).show()
-                val returnedList = viewModel.searchByName(query)
                 return true
             }
             override fun onQueryTextChange(newText: String?): Boolean {

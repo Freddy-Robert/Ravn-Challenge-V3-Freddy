@@ -19,4 +19,5 @@
     <string name="placeholder_unknown_specie_name">Human</string>
     <string name="placeholder_unknown_world">Unknown World</string>
     <string name="text_search_menu">Search</string>
+    <string name="search_hint_text">Search</string>
 </resources>

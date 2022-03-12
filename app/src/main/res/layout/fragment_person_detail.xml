@@ -159,10 +159,25 @@
             app:layout_constraintStart_toStartOf="@id/tv_general_information"
             app:layout_constraintTop_toBottomOf="@id/tv_birth_year_label" />
 
+        <androidx.recyclerview.widget.RecyclerView
+            android:id="@+id/vehicles_recycler"
+            android:layout_width="0dp"
+            android:layout_height="0dp"
+            android:layout_marginTop="21dp"
+            app:layoutManager="androidx.recyclerview.widget.LinearLayoutManager"
+            app:bindData="@{personData.person.vehicleConnection.vehicles}"
+            app:layout_constraintTop_toBottomOf="@id/tv_vehicles"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintBottom_toBottomOf="parent"/>
+
         <ProgressBar
             android:id="@+id/progress_bar"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
+            android:indeterminate="true"
+            android:indeterminateTintMode="src_atop"
+            android:indeterminateTint="@color/ravn_black"
             app:layout_constraintBottom_toBottomOf="parent"
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintStart_toStartOf="parent"

@@ -6,6 +6,7 @@ import androidx.fragment.app.Fragment
 import androidx.fragment.app.viewModels
 import androidx.navigation.fragment.navArgs
 import com.app.ravn_challenge.databinding.FragmentPersonDetailBinding
+import com.app.ravn_challenge.view.adapter.VehicleListAdapter
 import com.app.ravn_challenge.view.state.ViewState
 import com.app.ravn_challenge.viewmodel.PeopleViewModel
 import dagger.hilt.android.AndroidEntryPoint
@@ -34,6 +35,7 @@ class DetailPersonFragment : Fragment() {
 
         viewModel.getPersonById(args.personId)
         observeLiveData()
+        binding.vehiclesRecycler.adapter = VehicleListAdapter()
 
     }
 
