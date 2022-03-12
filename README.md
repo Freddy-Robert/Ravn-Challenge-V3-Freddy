@@ -38,7 +38,8 @@ This sample uses the Gradle build system. To build this project, use the "gradle
 * Third party and miscellaneous libraries
 
      -Hilt for dependency injection\
-		 -Kotlin Coroutines for managing background threads with simplified code and reducing needs for callbacks
+		 -Kotlin Coroutines for managing background threads with simplified code and reducing needs for callbacks\
+		 -Apollo Graphql - Library that allow transfer data between the cloud (server) to the UI of the app.
 		 
 
 
