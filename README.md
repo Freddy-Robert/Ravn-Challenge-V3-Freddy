@@ -1,6 +1,6 @@
 # Ravn Challenge
 
-An interesting and informative app that show a list of characters of Star Wars movie with more information in other section. The project has been implemented following the best practices in android development and architecture such as the MVVM model, dependency injection and using Apollo Graphql that allow transfer data between the server to the UI of the app.
+An interesting and informative app that show a list of characters of Star Wars movie with more information in a detailed section. The project has been implemented following the best practices in Android Development and Architecture such as the MVVM model, dependency injection and using Apollo Graphql that allow transfer data between the server to the UI of the app.
 <br/>
 <br/>
 ### Pre-Requisites
@@ -15,9 +15,10 @@ This sample uses the Gradle build system. To build this project, use the "gradle
 <br/>
 ### Screenshoots
 
-![ravn-image](https://user-images.githubusercontent.com/57290556/158028679-6ff188d6-c237-4e4c-973c-89864dd24486.png)
+![ravn-image3](https://user-images.githubusercontent.com/57290556/158037988-ab7a39c8-e033-4d19-b8f4-132d42eb42c1.png)
 <br/>
 <br/>
+
 ### Libraries Used
 
 * Arquitecture - A collection of libraries for design robust, testable and maintainable apps.
@@ -41,5 +42,3 @@ This sample uses the Gradle build system. To build this project, use the "gradle
 	 -Kotlin Coroutines for managing background threads with simplified code and reducing needs for callbacks\
 	 -Apollo Graphql - Library that allow transfer data between the cloud (server) to the UI of the app.
 		 
-
-
