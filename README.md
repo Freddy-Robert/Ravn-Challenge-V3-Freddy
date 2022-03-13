@@ -32,14 +32,14 @@ This sample uses the Gradle build system. To build this project, use the "gradle
 * UI - Details on why and how to use UI Components in your apps - together or separate
 
      -Fragment -  A basic unit of composable UI.\
-		 -Layout - Lay out widgets using different algorithms.
+     -Layout - Lay out widgets using different algorithms.
 		 <br/>
 		 <br/>
 * Third party and miscellaneous libraries
 
      -Hilt for dependency injection\
-		 -Kotlin Coroutines for managing background threads with simplified code and reducing needs for callbacks\
-		 -Apollo Graphql - Library that allow transfer data between the cloud (server) to the UI of the app.
+	 -Kotlin Coroutines for managing background threads with simplified code and reducing needs for callbacks\
+	 -Apollo Graphql - Library that allow transfer data between the cloud (server) to the UI of the app.
 		 
 
 

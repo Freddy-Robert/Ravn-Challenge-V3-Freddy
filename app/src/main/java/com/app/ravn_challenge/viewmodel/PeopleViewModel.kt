@@ -35,7 +35,6 @@ class PeopleViewModel @Inject constructor(private val repository: PeopleReposito
         _peopleList.postValue(ViewState.Loading())
         try {
             val response = repository.getAllPeople()
-            delay(3000)
             _peopleList.postValue(ViewState.Success(response))
         } catch (e: ApolloException) {
             Log.d("ApolloException", "Failure", e)
